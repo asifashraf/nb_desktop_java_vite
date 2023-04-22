@@ -6,7 +6,7 @@
 
     <groupId>com.notebull</groupId>
     <artifactId>nb</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <name>nb</name>
 
     <properties>
