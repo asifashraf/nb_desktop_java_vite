@@ -1,0 +1,43 @@
+#!/bin/bash
+source n-cd
+cd java
+
+mvn clean:clean
+mvn compiler:compile
+mvn jar:jar
+mvn package
+
+rm -rf ./target/custom-jdk
+jlink --module-path \
+~/Library/java/JavaVirtualMachines/openjdk-20.0.1/Contents/Home/jmods \
+--add-modules java.base,java.logging,java.desktop,jdk.jpackage \
+--compress 2 \
+--strip-debug \
+--no-header-files \
+--no-man-pages \
+--output target/custom-jdk
+
+
+# jpackage \
+# --type dmg \
+# --input ./target/custom-jdk \
+# --main-jar ../nb-01.jar \
+# --main-class com.notebull.nb.HelloApplication \
+# --name Notebull \
+# --app-version 1.0 \
+# --mac-package-identifier \
+# com.notebull \
+# --mac-package-name notebull \
+# --mac-package-signing-prefix developer_id \
+# --dest target/build-mac/
+
+jpackage \
+--type dmg \
+--input target \
+--main-jar nb-1.0.jar \
+--name "Notebull" \
+--runtime-image target/custom-jdk \
+--main-class com.notebull.nb.HelloApplication \
+--verbose
+
+
