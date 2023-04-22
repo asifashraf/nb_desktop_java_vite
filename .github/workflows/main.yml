@@ -64,7 +64,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./java/target/notebull-4.0.0.jar
+          asset_path: ./java/target/nb-1.0.jar
           asset_name: nb-1.0.jar
           asset_content_type: application/java-archive
 
