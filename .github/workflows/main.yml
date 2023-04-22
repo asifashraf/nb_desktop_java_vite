@@ -53,6 +53,7 @@ jobs:
           mvn -B package --file pom.xml
           cd target
           ls -la
+          cd ..
 
 
       # Release artifacts
