@@ -1,0 +1,4 @@
+#!/bin/bash
+source n-cd
+cd js
+yarn dev
