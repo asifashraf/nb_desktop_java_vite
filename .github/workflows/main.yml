@@ -6,6 +6,10 @@ on:
     types: [created]
 # runs-on: [ubuntu-latest, macos-latest, windows-latest]
 
+# Reference https://docs.github.com/en/actions/security-guides/automatic-token-authentication
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
