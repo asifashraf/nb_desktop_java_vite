@@ -1,0 +1,4 @@
+#!/bin/bash 
+source n-cd
+# call m-ax-dir and pass in current directory's path 
+m-ax-dir "$PWD"

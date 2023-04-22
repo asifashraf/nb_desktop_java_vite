@@ -1,0 +1,5 @@
+#!/bin/bash 
+source n-cd
+git add .
+git commit -m "$1"
+git push
