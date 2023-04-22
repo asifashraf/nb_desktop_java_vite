@@ -54,7 +54,8 @@ jobs:
           yarn build
           cd ..
           cd java
-          mvn -B package --file pom.xml
+          # mvn -B package --file pom.xml
+          mvn javafx:jlink
           cd target
           ls -la
           cd ..
@@ -69,8 +70,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./java/target/nb-1.0.jar
-          asset_name: nb-1.0.jar
+          asset_path: ./java/target/app.zip
+          asset_name: app.zip
           asset_content_type: application/java-archive
 
       # - name: Upload Release Asset
