@@ -1,4 +1,0 @@
-#!/bin/sh
-source n-cd
-cd js
-yarn build
