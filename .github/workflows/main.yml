@@ -29,4 +29,9 @@ jobs:
         run: |
           java --version
           node --version
+          cd js
+          yarn install
+          yarn build
+          cd ..
+          cd java
           mvn -B package --file pom.xml
